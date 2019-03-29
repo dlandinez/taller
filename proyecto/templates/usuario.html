@@ -1,0 +1,32 @@
+{% extends "layoutI.html" %}
+
+{% block content %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>INGRESAR</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+</head>
+
+<body>
+    <SCRIPT language=JavaScript>
+        function go() {
+            if (document.form.password.value == 'galpo' && document.form.login.value == 'basilio') {
+                window.location.assign("http://127.0.0.1:5000/user");
+            }
+            else {
+                alert("Porfavor ingrese, nombre de usuario y contraseña correctos.");
+            }
+        } 
+    </SCRIPT>
+
+    <FORM name=form action="home.html">
+
+        <P>USUARIO : <INPUT type=text name=login>
+        <P>CONTRASEÑA : <INPUT type=password name=password>
+        <P> <INPUT onclick=go() type=button value=Acceder></P>
+
+    </FORM>
+
+</body>
+{% endblock %}
